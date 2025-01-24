@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crop Recommendation</title>
+    <style>
+      body {
+        background-image: url("static/image.png");
+        background-size: cover;
+        background-position: center;
+        font-family: Arial, sans-serif;
+        color: white;
+        text-align: center;
+        background-repeat: no-repeat;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      h2 {
+        margin-bottom: 15px; /* Reduced the margin */
+      }
+      form {
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 20px; /* Reduced the padding */
+        border-radius: 10px;
+        text-align: left;
+        width: 400px;
+      }
+      label {
+        display: block;
+        margin-bottom: 3px; /* Reduced the margin */
+        font-weight: bold;
+      }
+      input {
+        width: 100%;
+        margin-bottom: 15px; /* Reduced the margin */
+        padding: 8px; /* Reduced the padding */
+        border-radius: 5px;
+        border: none;
+        box-sizing: border-box;
+      }
+      button {
+        width: 100%;
+        padding: 8px; /* Reduced the padding */
+        border-radius: 5px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="/predict" method="post">
+      <h2>Crop Recommendation System</h2>
+      <label for="temperature">Temperature :</label>
+      <input
+        type="text"
+        name="temperature"
+        id="temperature"
+        placeholder="8.83 - 43.68"
+        required
+      />
+
+      <label for="humidity">Humidity :</label>
+      <input
+        type="text"
+        name="humidity"
+        id="humidity"
+        placeholder="14.26 - 99.98"
+        required
+      />
+
+      <label for="ph">pH :</label>
+      <input type="text" name="ph" id="ph" placeholder="3.50 - 9.94" required />
+
+      <label for="rainfall">Rainfall :</label>
+      <input
+        type="text"
+        name="rainfall"
+        id="rainfall"
+        placeholder="20.21 - 298.56"
+        required
+      />
+
+      <label for="N">Nitrogen (N) :</label>
+      <input type="text" name="N" id="N" placeholder="0 - 140" required />
+
+      <label for="P">Phosphorus (P):</label>
+      <input type="text" name="P" id="P" placeholder="5 - 145" required />
+
+      <label for="K">Potassium (K) :</label>
+      <input type="text" name="K" id="K" placeholder="5 - 205" required />
+
+      <button type="submit">Predict</button>
+    </form>
+  </body>
+</html>
